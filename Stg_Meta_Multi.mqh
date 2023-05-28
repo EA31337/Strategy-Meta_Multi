@@ -1,10 +1,12 @@
 /**
  * @file
- * Implements Meta_Multi strategy based on the Meta_Multi indicator.
+ * Implements Meta Multi strategy.
  */
 
 // User input params.
-INPUT_GROUP("Meta_Multi strategy: strategy params");
+INPUT_GROUP("Meta Multi strategy: main params");
+INPUT int Meta_Multi_Active_Strategies = 0;  // Active strategies
+INPUT_GROUP("Meta Multi strategy: common params");
 INPUT float Meta_Multi_LotSize = 0;                // Lot size
 INPUT int Meta_Multi_SignalOpenMethod = 0;         // Signal open method
 INPUT float Meta_Multi_SignalOpenLevel = 0;        // Signal open level
@@ -22,9 +24,6 @@ INPUT short Meta_Multi_Shift = 0;                  // Shift
 INPUT float Meta_Multi_OrderCloseLoss = 80;        // Order close loss
 INPUT float Meta_Multi_OrderCloseProfit = 80;      // Order close profit
 INPUT int Meta_Multi_OrderCloseTime = -30;         // Order close time in mins (>0) or bars (<0)
-INPUT_GROUP("Meta_Multi strategy: Meta_Multi indicator params");
-INPUT int Meta_Multi_Indi_Meta_Multi_Shift = 0;                                        // Shift
-INPUT ENUM_IDATA_SOURCE_TYPE Meta_Multi_Indi_Meta_Multi_SourceType = IDATA_INDICATOR;  // Source type
 
 // Structs.
 
@@ -44,18 +43,21 @@ struct Stg_Meta_Multi_Params_Defaults : StgParams {
 };
 
 class Stg_Meta_Multi : public Strategy {
+ protected:
+  DictStruct<long, Ref<Strategy>> strats;
+
  public:
   Stg_Meta_Multi(StgParams &_sparams, TradeParams &_tparams, ChartParams &_cparams, string _name = "")
       : Strategy(_sparams, _tparams, _cparams, _name) {}
 
-  static Stg_Meta_Multi *Init(ENUM_TIMEFRAMES _tf = NULL) {
+  static Stg_Meta_Multi *Init(ENUM_TIMEFRAMES _tf = NULL, EA *_ea = NULL) {
     // Initialize strategy initial values.
     Stg_Meta_Multi_Params_Defaults stg_demo_defaults;
     StgParams _stg_params(stg_demo_defaults);
     // Initialize Strategy instance.
     ChartParams _cparams(_tf, _Symbol);
     TradeParams _tparams;
-    Strategy *_strat = new Stg_Meta_Multi(_stg_params, _tparams, _cparams, "Meta_Multi");
+    Strategy *_strat = new Stg_Meta_Multi(_stg_params, _tparams, _cparams, "(Meta) Multi");
     return _strat;
   }
 
@@ -63,6 +65,11 @@ class Stg_Meta_Multi : public Strategy {
    * Event on strategy's init.
    */
   void OnInit() {}
+
+  /**
+   * Sets active strategies.
+   */
+  void SetStrategies(EA *_ea = NULL) { strats = _ea.GetStrategies(); }
 
   /**
    * Check strategy's opening signal.
