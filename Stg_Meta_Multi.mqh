@@ -5,11 +5,9 @@
 
 // User input params.
 INPUT2_GROUP("Meta Multi strategy: main params");
-INPUT2 ulong Meta_Multi_Active_Strategies = (1 << STRAT_ALLIGATOR) + (1 << STRAT_AWESOME) + (1 << STRAT_BANDS) +
-                                            (1 << STRAT_ENVELOPES) + (1 << STRAT_ICHIMOKU);  // Active strategies
-// (1 << STRAT_PATTERN) +
-// (1 << STRAT_PINBAR) + (1 << STRAT_PIVOT) + (1 << STRAT_MACD) +
-// (1 << STRAT_RSI) + (1 << STRAT_RVI) + (1 << STRAT_SAR);
+INPUT2 unsigned int Meta_Multi_Active_Strategies = (1 << 3) + (1 << 4) + (1 << 5) + (1 << 6) + (1 << 8) + (1 << 11) +
+                                                   (1 << 15) + (1 << 20) + (1 << 21) + (1 << 22) + (1 << 23) +
+                                                   (1 << 24);  // Active strategies
 INPUT2_GROUP("Meta Multi strategy: common params");
 INPUT2 float Meta_Multi_LotSize = 0;                // Lot size
 INPUT2 int Meta_Multi_SignalOpenMethod = 0;         // Signal open method
@@ -80,127 +78,101 @@ class Stg_Meta_Multi : public Strategy {
     for (int _sid = 0; _sid < sizeof(int) * 8; ++_sid) {
       if ((Meta_Multi_Active_Strategies & (1 << _sid)) != 0) {
         switch (_sid) {
-          case STRAT_NONE:
-            break;
-          case STRAT_AC:
-            _result &= StrategyAdd<Stg_AC>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_AD:
-            _result &= StrategyAdd<Stg_AD>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_ADX:
+          case 1 << 0:
             _result &= StrategyAdd<Stg_ADX>(_tf, _magic_no, _sid);
             break;
-          case STRAT_AMA:
+          case 1 << 1:
             _result &= StrategyAdd<Stg_AMA>(_tf, _magic_no, _sid);
             break;
-          case STRAT_ASI:
+          case 1 << 2:
             _result &= StrategyAdd<Stg_ASI>(_tf, _magic_no, _sid);
             break;
-          case STRAT_ATR:
+          case 1 << 3:
             _result &= StrategyAdd<Stg_ATR>(_tf, _magic_no, _sid);
             break;
-          case STRAT_ALLIGATOR:
+          case 1 << 4:
             _result &= StrategyAdd<Stg_Alligator>(_tf, _magic_no, _sid);
             break;
-          case STRAT_AWESOME:
+          case 1 << 5:
             _result &= StrategyAdd<Stg_Awesome>(_tf, _magic_no, _sid);
             break;
-          case STRAT_BWMFI:
-            _result &= StrategyAdd<Stg_BWMFI>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_BANDS:
+          case 1 << 6:
             _result &= StrategyAdd<Stg_Bands>(_tf, _magic_no, _sid);
             break;
-          case STRAT_BEARS_POWER:
-            _result &= StrategyAdd<Stg_BearsPower>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_BULLS_POWER:
-            _result &= StrategyAdd<Stg_BullsPower>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_CCI:
+          case 1 << 7:
             _result &= StrategyAdd<Stg_CCI>(_tf, _magic_no, _sid);
             break;
-          case STRAT_CHAIKIN:
+          case 1 << 8:
             _result &= StrategyAdd<Stg_Chaikin>(_tf, _magic_no, _sid);
             break;
-          case STRAT_DEMA:
+          case 1 << 9:
             _result &= StrategyAdd<Stg_DEMA>(_tf, _magic_no, _sid);
             break;
-          case STRAT_DEMARKER:
+          case 1 << 10:
             _result &= StrategyAdd<Stg_DeMarker>(_tf, _magic_no, _sid);
             break;
-          case STRAT_ENVELOPES:
+          case 1 << 11:
             _result &= StrategyAdd<Stg_Envelopes>(_tf, _magic_no, _sid);
             break;
-          case STRAT_FORCE:
-            _result &= StrategyAdd<Stg_Force>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_FRACTALS:
-            _result &= StrategyAdd<Stg_Fractals>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_GATOR:
+          case 1 << 12:
             _result &= StrategyAdd<Stg_Gator>(_tf, _magic_no, _sid);
             break;
-          case STRAT_HEIKEN_ASHI:
+          case 1 << 13:
             _result &= StrategyAdd<Stg_HeikenAshi>(_tf, _magic_no, _sid);
             break;
-          case STRAT_ICHIMOKU:
+          case 1 << 14:
             _result &= StrategyAdd<Stg_Ichimoku>(_tf, _magic_no, _sid);
             break;
-          case STRAT_INDICATOR:
+          case 1 << 15:
             _result &= StrategyAdd<Stg_Indicator>(_tf, _magic_no, _sid);
             break;
-          case STRAT_MA:
-            _result &= StrategyAdd<Stg_MA>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_MACD:
+          case 1 << 16:
             _result &= StrategyAdd<Stg_MACD>(_tf, _magic_no, _sid);
             break;
-          case STRAT_META_MULTI:
-            _result &= StrategyAdd<Stg_Meta_Multi>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_MFI:
+          case 1 << 17:
             _result &= StrategyAdd<Stg_MFI>(_tf, _magic_no, _sid);
             break;
-          case STRAT_MOMENTUM:
-            _result &= StrategyAdd<Stg_Momentum>(_tf, _magic_no, _sid);
-            break;
-          case STRAT_OBV:
+          case 1 << 18:
             _result &= StrategyAdd<Stg_OBV>(_tf, _magic_no, _sid);
             break;
-          case STRAT_OSMA:
+          case 1 << 19:
             _result &= StrategyAdd<Stg_OsMA>(_tf, _magic_no, _sid);
             break;
-          case STRAT_PATTERN:
+          case 1 << 20:
             _result &= StrategyAdd<Stg_Pattern>(_tf, _magic_no, _sid);
             break;
-          case STRAT_PINBAR:
+          case 1 << 21:
             _result &= StrategyAdd<Stg_Pinbar>(_tf, _magic_no, _sid);
             break;
-          case STRAT_PIVOT:
+          case 1 << 22:
             _result &= StrategyAdd<Stg_Pivot>(_tf, _magic_no, _sid);
             break;
-          case STRAT_RSI:
+          case 1 << 23:
             _result &= StrategyAdd<Stg_RSI>(_tf, _magic_no, _sid);
             break;
-          case STRAT_RVI:
+          case 1 << 24:
             _result &= StrategyAdd<Stg_RVI>(_tf, _magic_no, _sid);
             break;
-          case STRAT_SAR:
+          case 1 << 25:
             _result &= StrategyAdd<Stg_SAR>(_tf, _magic_no, _sid);
             break;
-          case STRAT_STDDEV:
+          case 1 << 26:
             _result &= StrategyAdd<Stg_StdDev>(_tf, _magic_no, _sid);
             break;
-          case STRAT_STOCHASTIC:
+          case 1 << 27:
             _result &= StrategyAdd<Stg_Stochastic>(_tf, _magic_no, _sid);
             break;
-          case STRAT_WPR:
+          case 1 << 28:
             _result &= StrategyAdd<Stg_WPR>(_tf, _magic_no, _sid);
             break;
-          case STRAT_ZIGZAG:
+          case 1 << 29:
             _result &= StrategyAdd<Stg_ZigZag>(_tf, _magic_no, _sid);
+            break;
+          case 1 << 30:
+            _result &= StrategyAdd<Stg_Momentum>(_tf, _magic_no, _sid);
+            break;
+          case 1 << 31:
+            _result &= StrategyAdd<Stg_MA>(_tf, _magic_no, _sid);
             break;
           default:
             logger.Warning(StringFormat("Unknown strategy: %d", _sid), __FUNCTION_LINE__, GetName());
