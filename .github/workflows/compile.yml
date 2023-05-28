@@ -36,6 +36,7 @@ jobs:
           path: Include/EA31337-strategies
           ref: v2.000-dev
           repository: EA31337/EA31337-strategies
+          submodules: recursive
       - name: Compile for MQL4
         uses: fx31337/mql-compile-action@master
         with:
