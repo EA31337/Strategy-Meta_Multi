@@ -1,6 +1,6 @@
 /**
  * @file
- * Implements Demo strategy.
+ * Implements Meta_Multi strategy.
  */
 
 // Includes conditional compilation directives.
@@ -8,7 +8,6 @@
 
 // Includes EA31337 framework.
 #include <EA31337-classes/EA.mqh>
-#include <EA31337-classes/Indicators/Indi_Demo.mqh>
 #include <EA31337-classes/Strategy.mqh>
 
 // Inputs.
@@ -18,13 +17,13 @@ input ENUM_LOG_LEVEL Log_Level = V_INFO;  // Log level.
 input bool Info_On_Chart = true;          // Display info on chart.
 
 // Includes strategy.
-#include "Stg_Demo.mqh"
+#include "Stg_Meta_Multi.mqh"
 
 // Defines.
-#define ea_name "Strategy Demo"
+#define ea_name "Strategy Meta_Multi"
 #define ea_version "1.012"
 #define ea_desc "Strategy based on EA31337 framework."
-#define ea_link "https://github.com/EA31337/Strategy-Demo"
+#define ea_link "https://github.com/EA31337/Strategy-Meta_Multi"
 #define ea_author "EA31337 Ltd"
 
 // Properties.
@@ -50,7 +49,7 @@ int OnInit() {
   bool _result = true;
   EAParams ea_params(__FILE__, Log_Level);
   ea = new EA(ea_params);
-  _result &= ea.StrategyAdd<Stg_Demo>(Active_Tfs);
+  _result &= ea.StrategyAdd<Stg_Meta_Multi>(Active_Tfs);
   return (_result ? INIT_SUCCEEDED : INIT_FAILED);
 }
 

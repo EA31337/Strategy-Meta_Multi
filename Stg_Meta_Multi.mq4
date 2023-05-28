@@ -6,8 +6,8 @@
 
 /**
  * @file
- * Implements Demo strategy.
+ * Implements Meta_Multi strategy.
  */
 
 // Includes the main code.
-#include "Stg_Demo.mq5"
+#include "Stg_Meta_Multi.mq5"
