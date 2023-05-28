@@ -10,13 +10,23 @@
 #include <EA31337-classes/EA.mqh>
 #include <EA31337-classes/Strategy.mqh>
 
+// Includes indicator classes.
+#include <EA31337-classes/Indicators/Bitwise/indicators.h>
+#include <EA31337-classes/Indicators/Price/indicators.h>
+#include <EA31337-classes/Indicators/Special/indicators.h>
+#include <EA31337-classes/Indicators/indicators.h>
+
+// Includes other strategy files.
+#include <EA31337-strategies/enum.h>
+#include <EA31337-strategies/strategies.h>
+
 // Inputs.
 input int Active_Tfs = M15B + M30B + H1B + H2B + H3B + H4B + H6B +
                        H8B;               // Timeframes (M1=1,M2=2,M5=16,M15=256,M30=1024,H1=2048,H2=4096,H3,H4,H6,H8)
 input ENUM_LOG_LEVEL Log_Level = V_INFO;  // Log level.
 input bool Info_On_Chart = true;          // Display info on chart.
 
-// Includes strategy.
+// Includes strategy class.
 #include "Stg_Meta_Multi.mqh"
 
 // Defines.
@@ -50,6 +60,10 @@ int OnInit() {
   EAParams ea_params(__FILE__, Log_Level);
   ea = new EA(ea_params);
   _result &= ea.StrategyAdd<Stg_Meta_Multi>(Active_Tfs);
+  for (DictStructIterator<long, Ref<Strategy>> iter = ea.GetStrategies().Begin(); iter.IsValid(); ++iter) {
+    Stg_Meta_Multi *_strat = iter.Value().Ptr();
+    _strat.SetStrategies(ea);
+  }
   return (_result ? INIT_SUCCEEDED : INIT_FAILED);
 }
 
