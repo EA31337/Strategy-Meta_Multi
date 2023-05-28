@@ -43,17 +43,6 @@ struct Stg_Meta_Multi_Params_Defaults : StgParams {
   }
 };
 
-#ifdef __config__
-// Loads pair specific param values.
-#include "config/H1.h"
-#include "config/H4.h"
-#include "config/H8.h"
-#include "config/M1.h"
-#include "config/M15.h"
-#include "config/M30.h"
-#include "config/M5.h"
-#endif
-
 class Stg_Meta_Multi : public Strategy {
  public:
   Stg_Meta_Multi(StgParams &_sparams, TradeParams &_tparams, ChartParams &_cparams, string _name = "")
@@ -63,11 +52,6 @@ class Stg_Meta_Multi : public Strategy {
     // Initialize strategy initial values.
     Stg_Meta_Multi_Params_Defaults stg_demo_defaults;
     StgParams _stg_params(stg_demo_defaults);
-#ifdef __config__
-    SetParamsByTf<StgParams>(_stg_params, _tf, stg_demo_m1, stg_demo_m5, stg_demo_m15, stg_demo_m30, stg_demo_h1,
-                             stg_demo_h4, stg_demo_h8);
-#endif
-    // Initialize indicator.
     // Initialize Strategy instance.
     ChartParams _cparams(_tf, _Symbol);
     TradeParams _tparams;
