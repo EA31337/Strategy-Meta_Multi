@@ -18,7 +18,7 @@
 
 // Includes other strategy files.
 #include <EA31337-strategies/enum.h>
-#include <EA31337-strategies/strategies.h>
+#include <EA31337-strategies/includes.h>
 
 // Inputs.
 input int Active_Tfs = M15B + M30B + H1B + H2B + H3B + H4B + H6B +
