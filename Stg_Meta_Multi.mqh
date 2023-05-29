@@ -3,6 +3,10 @@
  * Implements Meta Multi strategy.
  */
 
+// Prevents processing this includes file multiple times.
+#ifndef STG_META_MULTI_MQH
+#define STG_META_MULTI_MQH
+
 // User input params.
 INPUT2_GROUP("Meta Multi strategy: main params");
 INPUT2 unsigned int Meta_Multi_Active_Strategies = (1 << 3) + (1 << 4) + (1 << 5) + (1 << 6) + (1 << 8) + (1 << 11) +
@@ -236,3 +240,5 @@ class Stg_Meta_Multi : public Strategy {
     return _result;
   }
 };
+
+#endif  // STG_META_MULTI_MQH
