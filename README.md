@@ -7,7 +7,7 @@
 [![License][license-image]][license-link]
 [![Edit][gh-edit-badge]][gh-edit-link]
 
-Meta strategy which trades with multiple strategies at once.
+Multi meta strategy which trades with multiple strategies at once.
 
 It is like a mini EA.
 
