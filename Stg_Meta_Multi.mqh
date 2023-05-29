@@ -1,6 +1,6 @@
 /**
  * @file
- * Implements Meta Multi strategy.
+ * Implements Multi meta strategy.
  */
 
 // Prevents processing this includes file multiple times.

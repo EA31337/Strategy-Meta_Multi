@@ -6,7 +6,7 @@
 
 /**
  * @file
- * Implements Meta_Multi strategy.
+ * Implements Multi meta strategy.
  */
 
 // Includes the main code.

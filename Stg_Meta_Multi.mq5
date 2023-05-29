@@ -1,6 +1,6 @@
 /**
  * @file
- * Implements Meta_Multi strategy.
+ * Implements Multi meta strategy.
  */
 
 // Includes conditional compilation directives.
