@@ -54,8 +54,8 @@ class Stg_Meta_Multi : public Strategy {
 
   static Stg_Meta_Multi *Init(ENUM_TIMEFRAMES _tf = NULL, EA *_ea = NULL) {
     // Initialize strategy initial values.
-    Stg_Meta_Multi_Params_Defaults stg_demo_defaults;
-    StgParams _stg_params(stg_demo_defaults);
+    Stg_Meta_Multi_Params_Defaults stg_multi_defaults;
+    StgParams _stg_params(stg_multi_defaults);
     // Initialize Strategy instance.
     ChartParams _cparams(_tf, _Symbol);
     TradeParams _tparams;
