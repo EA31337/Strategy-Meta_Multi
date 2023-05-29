@@ -13,9 +13,9 @@ It is like a mini EA.
 
 ## Dependencies
 
-| Tag      | Framework |
-|:--------:|:---------:|
-| v2.000   | v3.000.1  |
+| Tag      | Framework | Strategies |
+|:--------:|:---------:|:----------:|
+| v2.000   | v3.000.1  | v2.000     |
 
 <!-- Named links -->
 
