@@ -17,8 +17,13 @@
 #include <EA31337-classes/Indicators/indicators.h>
 
 // Includes other strategy files.
+#ifdef __strategies__
+#include "../enum.h"
+#include "../includes.h"
+#else
 #include <EA31337-strategies/enum.h>
 #include <EA31337-strategies/includes.h>
+#endif
 
 // Inputs.
 input int Active_Tfs = M15B + M30B + H1B + H2B + H3B + H4B + H6B +

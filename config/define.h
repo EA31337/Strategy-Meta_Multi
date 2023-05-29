@@ -9,3 +9,4 @@
 //#define __input__        // Enables input parameters.
 #define __input2__  // Enables 2nd level of input parameters.
 //#define __optimize__     // Enables optimization mode.
+//#define __strategies__        // Enables local strategies includes.
