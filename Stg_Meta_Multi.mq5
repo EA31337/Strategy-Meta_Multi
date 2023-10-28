@@ -17,14 +17,19 @@
 #include <EA31337-classes/Indicators/indicators.h>
 
 // Includes other strategy files.
+#ifndef __strategies__
+#include <EA31337-strategies/enum.h>
+#include <EA31337-strategies/includes.h>
+#include <EA31337-strategies/manager.h>
+#endif
 #ifdef __strategies_meta__
 #include "../enum.h"
 #include "../includes.h"
 #include "../manager.h"
 #else
-#include <EA31337-strategies/enum.h>
-#include <EA31337-strategies/includes.h>
-#include <EA31337-strategies/manager.h>
+#include <EA31337-strategies-meta/enum.h>
+#include <EA31337-strategies-meta/includes.h>
+#include <EA31337-strategies-meta/manager.h>
 #endif
 
 // Inputs.
