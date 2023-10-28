@@ -83,100 +83,100 @@ class Stg_Meta_Multi : public Strategy {
       if ((Meta_Multi_Active_Strategies & (1 << _sid)) != 0) {
         switch (_sid) {
           case 1 << 0:
-            _result &= StrategyAdd<Stg_ADX>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_ADX);
             break;
           case 1 << 1:
-            _result &= StrategyAdd<Stg_AMA>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_AMA);
             break;
           case 1 << 2:
-            _result &= StrategyAdd<Stg_ASI>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_ASI);
             break;
           case 1 << 3:
-            _result &= StrategyAdd<Stg_ATR>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_ATR);
             break;
           case 1 << 4:
-            _result &= StrategyAdd<Stg_Alligator>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_ALLIGATOR);
             break;
           case 1 << 5:
-            _result &= StrategyAdd<Stg_Awesome>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_AWESOME);
             break;
           case 1 << 6:
-            _result &= StrategyAdd<Stg_Bands>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_BANDS);
             break;
           case 1 << 7:
-            _result &= StrategyAdd<Stg_CCI>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_CCI);
             break;
           case 1 << 8:
-            _result &= StrategyAdd<Stg_Chaikin>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_CHAIKIN);
             break;
           case 1 << 9:
-            _result &= StrategyAdd<Stg_DEMA>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_DEMA);
             break;
           case 1 << 10:
-            _result &= StrategyAdd<Stg_DeMarker>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_DEMARKER);
             break;
           case 1 << 11:
-            _result &= StrategyAdd<Stg_Envelopes>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_ENVELOPES);
             break;
           case 1 << 12:
-            _result &= StrategyAdd<Stg_Gator>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_GATOR);
             break;
           case 1 << 13:
-            _result &= StrategyAdd<Stg_HeikenAshi>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_HEIKEN_ASHI);
             break;
           case 1 << 14:
-            _result &= StrategyAdd<Stg_Ichimoku>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_ICHIMOKU);
             break;
           case 1 << 15:
-            _result &= StrategyAdd<Stg_Indicator>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_INDICATOR);
             break;
           case 1 << 16:
-            _result &= StrategyAdd<Stg_MACD>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_MACD);
             break;
           case 1 << 17:
-            _result &= StrategyAdd<Stg_MFI>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_MFI);
             break;
           case 1 << 18:
-            _result &= StrategyAdd<Stg_OBV>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_OBV);
             break;
           case 1 << 19:
-            _result &= StrategyAdd<Stg_OsMA>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_OSMA);
             break;
           case 1 << 20:
-            _result &= StrategyAdd<Stg_Pattern>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_PATTERN);
             break;
           case 1 << 21:
-            _result &= StrategyAdd<Stg_Pinbar>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_PINBAR);
             break;
           case 1 << 22:
-            _result &= StrategyAdd<Stg_Pivot>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_PIVOT);
             break;
           case 1 << 23:
-            _result &= StrategyAdd<Stg_RSI>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_RSI);
             break;
           case 1 << 24:
-            _result &= StrategyAdd<Stg_RVI>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_RVI);
             break;
           case 1 << 25:
-            _result &= StrategyAdd<Stg_SAR>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_SAR);
             break;
           case 1 << 26:
-            _result &= StrategyAdd<Stg_StdDev>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_STDDEV);
             break;
           case 1 << 27:
-            _result &= StrategyAdd<Stg_Stochastic>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_STOCHASTIC);
             break;
           case 1 << 28:
-            _result &= StrategyAdd<Stg_WPR>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_WPR);
             break;
           case 1 << 29:
-            _result &= StrategyAdd<Stg_ZigZag>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_ZIGZAG);
             break;
           case 1 << 30:
-            _result &= StrategyAdd<Stg_Momentum>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_MOMENTUM);
             break;
           case 1 << 31:
-            _result &= StrategyAdd<Stg_MA>(_tf, _magic_no, _sid);
+            _result &= StrategyAdd(STRAT_MA);
             break;
           default:
             logger.Warning(StringFormat("Unknown strategy: %d", _sid), __FUNCTION_LINE__, GetName());
@@ -188,26 +188,23 @@ class Stg_Meta_Multi : public Strategy {
   }
 
   /**
-   * Adds strategy to specific timeframe.
-   *
-   * @param
-   *   _tf - timeframe to add the strategy.
-   *   _magic_no - unique order identified
-   *
-   * @return
-   *   Returns true if the strategy has been initialized correctly, otherwise false.
+   * Sets strategy.
    */
-  template <typename SClass>
-  bool StrategyAdd(ENUM_TIMEFRAMES _tf, long _magic_no = 0, int _type = 0) {
-    bool _result = true;
-    _magic_no = _magic_no > 0 ? _magic_no : rand();
-    Ref<Strategy> _strat = ((SClass *)NULL).Init(_tf);
-    _strat.Ptr().Set<long>(STRAT_PARAM_ID, _magic_no);
-    _strat.Ptr().Set<ENUM_TIMEFRAMES>(STRAT_PARAM_TF, _tf);
-    _strat.Ptr().Set<int>(STRAT_PARAM_TYPE, _type);
-    _strat.Ptr().OnInit();
-    _result &= strats.Push(_strat);
-    return _result;
+  bool StrategyAdd(ENUM_STRATEGY _sid, long _index = -1) {
+    ENUM_TIMEFRAMES _tf = Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF);
+    Ref<Strategy> _strat = StrategiesManager::StrategyInitByEnum(_sid, _tf);
+    if (_strat.IsSet()) {
+      _strat.Ptr().Set<long>(STRAT_PARAM_ID, Get<long>(STRAT_PARAM_ID));
+      _strat.Ptr().Set<ENUM_TIMEFRAMES>(STRAT_PARAM_TF, _tf);
+      _strat.Ptr().Set<int>(STRAT_PARAM_TYPE, _sid);
+      _strat.Ptr().OnInit();
+      if (_index >= 0) {
+        strats.Set(_index, _strat);
+      } else {
+        strats.Push(_strat);
+      }
+    }
+    return _strat.IsSet();
   }
 
   /**
