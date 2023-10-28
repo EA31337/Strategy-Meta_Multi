@@ -26,10 +26,6 @@
 #include "../enum.h"
 #include "../includes.h"
 #include "../manager.h"
-#else
-#include <EA31337-strategies-meta/enum.h>
-#include <EA31337-strategies-meta/includes.h>
-#include <EA31337-strategies-meta/manager.h>
 #endif
 
 // Inputs.
