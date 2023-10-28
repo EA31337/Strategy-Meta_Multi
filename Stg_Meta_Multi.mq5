@@ -20,9 +20,11 @@
 #ifdef __strategies__
 #include "../enum.h"
 #include "../includes.h"
+#include "../manager.h"
 #else
 #include <EA31337-strategies/enum.h>
 #include <EA31337-strategies/includes.h>
+#include <EA31337-strategies/manager.h>
 #endif
 
 // Inputs.
