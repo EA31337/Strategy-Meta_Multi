@@ -17,7 +17,7 @@
 #include <EA31337-classes/Indicators/indicators.h>
 
 // Includes other strategy files.
-#ifdef __strategies__
+#ifdef __strategies_meta__
 #include "../enum.h"
 #include "../includes.h"
 #include "../manager.h"
