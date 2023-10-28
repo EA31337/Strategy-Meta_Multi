@@ -193,6 +193,9 @@ class Stg_Meta_Multi : public Strategy {
   bool StrategyAdd(ENUM_STRATEGY _sid, long _index = -1) {
     ENUM_TIMEFRAMES _tf = Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF);
     Ref<Strategy> _strat = StrategiesManager::StrategyInitByEnum(_sid, _tf);
+    if (!_strat.IsSet()) {
+      _strat = StrategiesMetaManager::StrategyInitByEnum((ENUM_STRATEGY_META)_sid, _tf);
+    }
     if (_strat.IsSet()) {
       _strat.Ptr().Set<long>(STRAT_PARAM_ID, Get<long>(STRAT_PARAM_ID));
       _strat.Ptr().Set<ENUM_TIMEFRAMES>(STRAT_PARAM_TF, _tf);
