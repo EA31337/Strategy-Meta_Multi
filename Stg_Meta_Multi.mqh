@@ -12,24 +12,24 @@ INPUT2_GROUP("Meta Multi strategy: main params");
 INPUT2 unsigned int Meta_Multi_Active_Strategies = (1 << 3) + (1 << 4) + (1 << 5) + (1 << 6) + (1 << 8) + (1 << 11) +
                                                    (1 << 15) + (1 << 20) + (1 << 21) + (1 << 22) + (1 << 23) +
                                                    (1 << 24);  // Active strategies
-INPUT2_GROUP("Meta Multi strategy: common params");
-INPUT2 float Meta_Multi_LotSize = 0;                // Lot size
-INPUT2 int Meta_Multi_SignalOpenMethod = 0;         // Signal open method
-INPUT2 float Meta_Multi_SignalOpenLevel = 0;        // Signal open level
-INPUT2 int Meta_Multi_SignalOpenFilterMethod = 32;  // Signal open filter method
-INPUT2 int Meta_Multi_SignalOpenFilterTime = 3;     // Signal open filter time (0-31)
-INPUT2 int Meta_Multi_SignalOpenBoostMethod = 0;    // Signal open boost method
-INPUT2 int Meta_Multi_SignalCloseMethod = 0;        // Signal close method
-INPUT2 int Meta_Multi_SignalCloseFilter = 32;       // Signal close filter (-127-127)
-INPUT2 float Meta_Multi_SignalCloseLevel = 0;       // Signal close level
-INPUT2 int Meta_Multi_PriceStopMethod = 0;          // Price limit method
-INPUT2 float Meta_Multi_PriceStopLevel = 2;         // Price limit level
-INPUT2 int Meta_Multi_TickFilterMethod = 32;        // Tick filter method (0-255)
-INPUT2 float Meta_Multi_MaxSpread = 4.0;            // Max spread to trade (in pips)
-INPUT2 short Meta_Multi_Shift = 0;                  // Shift
-INPUT2 float Meta_Multi_OrderCloseLoss = 80;        // Order close loss
-INPUT2 float Meta_Multi_OrderCloseProfit = 80;      // Order close profit
-INPUT2 int Meta_Multi_OrderCloseTime = -30;         // Order close time in mins (>0) or bars (<0)
+INPUT3_GROUP("Meta Multi strategy: common params");
+INPUT3 float Meta_Multi_LotSize = 0;                // Lot size
+INPUT3 int Meta_Multi_SignalOpenMethod = 0;         // Signal open method
+INPUT3 float Meta_Multi_SignalOpenLevel = 0;        // Signal open level
+INPUT3 int Meta_Multi_SignalOpenFilterMethod = 32;  // Signal open filter method
+INPUT3 int Meta_Multi_SignalOpenFilterTime = 3;     // Signal open filter time (0-31)
+INPUT3 int Meta_Multi_SignalOpenBoostMethod = 0;    // Signal open boost method
+INPUT3 int Meta_Multi_SignalCloseMethod = 0;        // Signal close method
+INPUT3 int Meta_Multi_SignalCloseFilter = 32;       // Signal close filter (-127-127)
+INPUT3 float Meta_Multi_SignalCloseLevel = 0;       // Signal close level
+INPUT3 int Meta_Multi_PriceStopMethod = 0;          // Price limit method
+INPUT3 float Meta_Multi_PriceStopLevel = 2;         // Price limit level
+INPUT3 int Meta_Multi_TickFilterMethod = 32;        // Tick filter method (0-255)
+INPUT3 float Meta_Multi_MaxSpread = 4.0;            // Max spread to trade (in pips)
+INPUT3 short Meta_Multi_Shift = 0;                  // Shift
+INPUT3 float Meta_Multi_OrderCloseLoss = 80;        // Order close loss
+INPUT3 float Meta_Multi_OrderCloseProfit = 80;      // Order close profit
+INPUT3 int Meta_Multi_OrderCloseTime = -30;         // Order close time in mins (>0) or bars (<0)
 
 // Structs.
 
