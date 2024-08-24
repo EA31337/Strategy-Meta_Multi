@@ -98,7 +98,7 @@ jobs:
         run: '(Get-ChildItem -Recurse -Path . -Include *.ex[45]).fullname'
       - run: Get-Location
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: Strategy
           path: '**/Stg_Meta_*.ex[45]'
