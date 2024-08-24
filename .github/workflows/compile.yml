@@ -100,7 +100,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Strategy
+          name: Strategy.ex${{ matrix.version }}
           path: '**/Stg_Meta_*.ex[45]'
     strategy:
       matrix:

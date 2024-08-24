@@ -34,7 +34,11 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: Strategy
+          merge-multiple: true
+          pattern: Strategy.ex?
+
+      - name: List compiled files
+        run: find . -name '*.ex?' -type f -print
 
       - name: Test ${{ matrix.year }}
         uses: fx31337/mql-tester-action@master
