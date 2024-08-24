@@ -1,0 +1,53 @@
+---
+name: Test
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+    branches:
+      - 'master'
+      - '*dev*'
+    paths-ignore:
+      - '*.md'
+  push:
+    branches:
+      - 'master'
+      - '*dev*'
+    paths-ignore:
+      - '*.md'
+
+jobs:
+
+  compile:
+    name: Compile
+    uses: ./.github/workflows/compile.yml
+
+  test:
+    name: Test
+    needs: compile
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        file:
+          - Stg_Meta_Multi
+        year: [2022, 2024]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: Strategy
+
+      - name: Test ${{ matrix.year }}
+        uses: fx31337/mql-tester-action@master
+        with:
+          Login: ${{ secrets.MT5_LOGIN }}
+          Password: ${{ secrets.MT5_PASSWORD }}
+          Server: MetaQuotes-Demo
+          TestDeposit: 2000
+          TestExpert: ${{ matrix.file }}.ex5
+          TestFromDate: ${{ matrix.year }}.01.01
+          TestPeriod: M1
+          TestSymbol: EURUSD
+          TestToDate: ${{ matrix.year }}.01.14
+          # yamllint disable-line rule:line-length
+          UrlExpert: file://${{ github.workspace }}/${{ matrix.file }}.ex5
+          Version: 5
